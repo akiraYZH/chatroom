@@ -1,0 +1,17 @@
+{
+    "HOST": {
+        "PORT": 8081,
+        "PORT_PRO": 8081,
+        "WHITELIST": ["http://localhost:8080", "http://localhost:8082", "http://localhost:8081"]
+    },
+    "ENV": {
+        "DEV": "development",
+        "DEV_URL":"http://localhost:8081",
+        "PRO": "production",
+        "PRO_URL":""
+    },
+    "RESOURCE": {
+        "IMAGE_PATH": "/public/images/avatars/",
+        "IMAGE_URL_PREFIX": "/images/avatars/"
+    } 
+}
