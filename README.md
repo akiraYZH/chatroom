@@ -1,6 +1,26 @@
-# Vue 3 + Typescript + Vite
+# Vue 3 + Typescript + Vite + Express
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+## Project description
+Personal project: *simple demo of real-time chat room*
+
+Objective: *Study socket.io, Vue3 and Express*
+
+---
+## Install dependencies
+`npm i`
+
+## Run the project in dev mode
+* front-end: `npm run dev`
+* back-end: `npm run server-dev`
+* visite: localhost:8080
+
+## Deploy
+1. `npm run build`
+2. Put **package.json**, **server** folder, **dist**  folder in server
+3. `npm run start`
+4. Set reverse proxy for requests to localhost:8081
+
+---
 
 ## Recommended IDE Setup
 
