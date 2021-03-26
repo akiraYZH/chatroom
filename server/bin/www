@@ -22,7 +22,11 @@ app.set('port', process.env.NODE_ENV == config.ENV.DEV ? config.HOST.PORT : conf
 var server = http.Server(app);
 
 // set up socket
-socket_init(server);
+let io = socket_init(server);
+app.use(function(req, res, next){
+  res.io = io;
+  next();
+})
 
 /**
  * Listen on provided port, on all network interfaces.

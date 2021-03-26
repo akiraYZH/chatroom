@@ -10,7 +10,11 @@
                     <div class="messagesWindow" id="messagesWindow">
                         <div  v-for="msg in messages" :key="msg" :class="msg.user.id === state.user.id ? 'me-box' : 'other-box'">
                             <div :class="'msg' + (msg.user.id === state.user.id ? ' me' : ' other')">
-                                <Avatar :src="msg.user.avatar" size="80" class="avatar"/>
+                                <div>
+                                    <Avatar :src="msg.user.avatar" size="80" class="avatar"/>
+                                    <p class="username">{{msg.user.username}}</p>
+                                </div>
+                                
                                 <p class="msg-text">{{msg.message}}</p>
                             </div>
                         </div>
@@ -231,6 +235,11 @@ export default defineComponent({
                             .avatar {
                                 flex-shrink: 0;
                             }
+                            .username{
+                                max-width: 120px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
                             .msg-text{
                                 padding: 7px;
                                 margin: 0 5px;
@@ -302,6 +311,7 @@ export default defineComponent({
                     }
                     .userBox{
                         width: 80px;
+                        height: 80px;
                     }
                 }
             }

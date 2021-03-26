@@ -12,13 +12,6 @@ export type systemMessage = {
     username: string,
     status: string, 
 }
-
-
-
-// export type io = {
-//     emit:Function,
-// }
-
 export interface emit {
     (event: string, data?: any): void
 }
