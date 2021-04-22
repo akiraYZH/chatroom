@@ -4,6 +4,7 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let cors = require("./middlewares/cors");
+let dynamicRendering = require("./middlewares/dynamicRendering");
 let fs = require("fs");
 
 let app = express();
@@ -33,8 +34,11 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 
 //apis routers
 app.use('/api', router);
+
+
+
 // visit built frontend
-app.get('*', function (req, res) {
+app.get('*', dynamicRendering, function (req, res) {
   var html = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8')
   res.send(html)
  })
